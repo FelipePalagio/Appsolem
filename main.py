@@ -13,14 +13,10 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.textinput import TextInput
 def log():
     Config.set('graphics', 'resizable', True)
-    global flagmaster1
-    global flagmaster2
 
     class MyApp(App):
 
         def build(self):
-            global flagmaster1
-            global flagmaster2
             flagmaster1 = False
             flagmaster2 = False
             self.title = 'LOGIN'  # Set the title here
@@ -70,7 +66,7 @@ def log():
                 self.password_input.focus = True
 
             else:
-                self.username_input.text = 'UNKNOWN USERNAME'
+                self.username_input.text = 'USUÁRIO DESCONHECIDO'
 
         def on_sec(self, instance):
             global flagmaster1
@@ -87,7 +83,7 @@ def log():
                     pass
             else:
                 self.password_input.password = False
-                self.password_input.text = 'UNKNOWN PASSWORD'
+                self.password_input.text = 'SENHA DESCONHECIDA'
 
     if __name__ == '__main__':
         MyApp().run()
